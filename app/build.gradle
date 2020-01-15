@@ -12,7 +12,6 @@ apply plugin: 'com.google.android.gms.oss-licenses-plugin'
 
 
 import com.android.build.OutputFile
-import org.gradle.internal.logging.text.StyledTextOutput.Style
 import org.gradle.internal.logging.text.StyledTextOutputFactory
 
 import static org.gradle.api.tasks.testing.TestResult.ResultType
@@ -627,7 +626,7 @@ def glean_android_components_tag = (
 // Generate markdown docs for the collected metrics.
 ext.gleanGenerateMarkdownDocs = true
 ext.gleanDocsDirectory = "$rootDir/docs"
-apply from: 'https://github.com/mozilla-mobile/android-components/raw/' + glean_android_components_tag + '/components/service/glean/scripts/sdk_generator.gradle'
+apply from: 'sdk_generator.gradle'
 
 // For production builds, the native code for all `org.mozilla.appservices` dependencies gets compiled together
 // into a single "megazord" build, and different megazords are published for different subsets of features.
